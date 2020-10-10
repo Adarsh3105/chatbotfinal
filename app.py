@@ -108,12 +108,12 @@ def bag_of_words(s, words):
 	return numpy.array(bag) 
 
 
-def chat(): 
+def chat(inp): 
 	print("""Start talking with the bot and ask your 
 	queries about Corona-virus(type quit to stop)!""") 
 	
 	while True: 
-		inp = input("You: ") 
+		#inp = input("You: ") 
 		if inp.lower() == "quit": 
 			break
 
@@ -149,7 +149,7 @@ app = Flask(__name__);
 def response():
     query = dict(request.form)['query']
     #res = query + " " + time.ctime()
-    res=chat()
+    res=chat(query)
     return jsonify({"response" : res})
 if __name__=="__main__":
     app.run(host="0.0.0.0",)
